@@ -141,12 +141,12 @@ public class OrdersAPIController {
             }           
     }
         
-    @RequestMapping(method = RequestMethod.DELETE, value="/{idmesa}")
+    @RequestMapping(value="/{idmesa}", method = RequestMethod.DELETE)
     public ResponseEntity<?> manejadorDeleteRecursoOrder(@PathVariable Integer idmesa){
         try {   
             int o = ros.calculateTableBill(idmesa);
             ros.releaseTable(idmesa);
-                return new ResponseEntity<>(o,HttpStatus.ACCEPTED);
+            return new ResponseEntity<>(o,HttpStatus.ACCEPTED);
         } catch (OrderServicesException ex) {
             Logger.getLogger(OrdersAPIController.class.getName()).log(Level.SEVERE, null, ex);
             return new ResponseEntity<>("La mesa no existe o no tiene una orden asociada",HttpStatus.NOT_FOUND);

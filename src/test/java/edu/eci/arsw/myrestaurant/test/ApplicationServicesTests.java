@@ -17,16 +17,13 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest()
 public class ApplicationServicesTests {
 
-    
+    @Autowired
     RestaurantOrderServicesStub ros;
 
     
     @Test
     public void contextLoads() throws OrderServicesException{
-        
-        
-        
-        
+
     }
     
     /**
@@ -58,5 +55,4 @@ public class ApplicationServicesTests {
             org.junit.Assert.assertTrue("Debe generar excepcion", true);
         }       
     }
-
 }
