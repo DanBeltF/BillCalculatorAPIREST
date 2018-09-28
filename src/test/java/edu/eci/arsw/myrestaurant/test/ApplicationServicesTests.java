@@ -20,7 +20,6 @@ public class ApplicationServicesTests {
     @Autowired
     RestaurantOrderServicesStub ros;
 
-    
     @Test
     public void contextLoads() throws OrderServicesException{
 
